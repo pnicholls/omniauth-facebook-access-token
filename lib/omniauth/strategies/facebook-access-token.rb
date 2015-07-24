@@ -63,6 +63,8 @@ module OmniAuth
       end
 
       def raw_info
+        puts "======================"
+        puts @raw_info ||= access_token.get('/me', info_options).inspect
         @raw_info ||= access_token.get('/me', info_options).parsed || {}
       end
 
